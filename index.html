@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+    <script src="libs/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -22,7 +23,35 @@
         </div>
     </header>
     <section>
-        
+        <div class="question-card border">
+            <span class="username">Usuário</span>
+            <p class="question-text center-text">Pergunta interessante para toda a humanidade</p>
+            <div class="question-buttons">
+                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+] </span>
+                <span class="likes-count">0</span>
+                <br/>
+                <span class="no-select question-button"
+                      onclick="sendDislike(this.parentElement.parentElement)">[-] </span>
+                <span class="dislikes-count">0</span>
+            </div>
+            <div class="question-comments">
+                <a href="#" class="no-select question-answers-btn" onclick="showAnswers(this.parentElement.parentElement)">[\/]</a>
+                <br/>
+                <a href="#" class="no-select question-reply-btn">[`.]</a>
+            </div>
+        </div>
+        <div class="answer-card invert" style="display: none">
+            <span class="username">Usuário</span>
+            <p class="question-text">Resposta Épica</p>
+            <div class="question-buttons">
+                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+] </span>
+                <span class="likes-count">0</span>
+                <br/>
+                <span class="no-select question-button"
+                      onclick="sendDislike(this.parentElement.parentElement)">[-] </span>
+                <span class="dislikes-count">0</span>
+            </div>
+        </div>
     </section>
 </body>
 
