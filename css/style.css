@@ -31,13 +31,16 @@ header {
     line-height: 10px;
     width: 10%;
     text-align: center;
+
 }
 
-.hamburguer-text {
+.hamburger-menu > img {
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger-modal {
@@ -68,7 +71,6 @@ header {
 }
 
 .hamburger-content {
-    /*height: 25%;*/
     margin: 10px;
     background-color: black;
     color: white;
