@@ -48,6 +48,7 @@ function responsively() {
     function turnTel() {
         $userDiv.hide();
         $hamburger.show();
+        $('form').css('width', '95%');
         responsivelyMode = 'Tel';
     }
 
@@ -55,6 +56,7 @@ function responsively() {
         $hamburger.hide();
         $('.hamburger-modal').fadeOut();
         $userDiv.show();
+        $('form').css('width', '40%');
         responsivelyMode = 'PC';
     }
 }
