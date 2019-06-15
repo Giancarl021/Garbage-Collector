@@ -1,3 +1,6 @@
+
+/* TEMPLATE POR GIANCARL021 */
+
 body {
     padding: 0;
     margin: 0;
@@ -50,6 +53,13 @@ header {
     background-color: white;
 }
 
+.input-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
 .hamburguer-container {
     position: absolute;
     left: 50%;
@@ -62,7 +72,8 @@ header {
     justify-content: space-between;
 }
 
-.hamburger-modal > img {
+.hamburger-modal > img,
+.input-modal > img {
     width: 20%;
     height: auto;
     position: absolute;
@@ -77,6 +88,52 @@ header {
     font-size: 5vh;
     padding: 5px;
     border-radius: 20px;
+}
+
+.input-modal-header {
+    top: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-modal-section {
+    width: 100%;
+    height: 70%;
+}
+
+.input-modal-section > textarea {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    resize: none;
+    color: black;
+    border: none;
+    outline: none;
+}
+
+.input-modal-footer {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.img-modal-footer > img {
+    height: 10%;
+    width: auto;
+}
+
+.input-modal-btn {
+    font-size: 8vh;
+    cursor: pointer;
 }
 
 .user-profile {
@@ -179,6 +236,10 @@ section {
 .invert {
     background-color: white;
     color: black;
+}
+
+.inverted-border {
+    border: 2px black solid;
 }
 
 .border {

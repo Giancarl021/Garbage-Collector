@@ -21,19 +21,29 @@
             </div>
             <div class="user-profile vertical-center border center-text">Usuário</div>
         </div>
-        <div class="hamburger-menu no-select" style="display: none" onclick="hamburguerMenu()">
+        <div class="hamburger-menu no-select" style="display: none" onclick="hamburguerMenu('.hamburger-modal')">
             <img src="img/menu.svg" alt="Menu"/>
         </div>
         <div class="hamburger-modal" style="display: none">
-            <img src="img/back.svg" alt="Retornar" onclick="hamburguerMenu()"/>
+            <img src="img/back.svg" alt="Retornar" onclick="hamburguerMenu('.hamburger-modal')"/>
             <div class="hamburguer-container">
-                <div class="hamburguer-return" onclick="hamburguerMenu()"></div>
                 <div class="hamburger-content center-text">Usuário</div>
                 <div onclick="window.location.href = 'login.html'"
-                     class="hamburger-content center-text no-select">Entrar ou Cadastrar
+                     class="hamburger-content center-text no-select invert inverted-border">Entrar ou Cadastrar
                 </div>
             </div>
-
+        </div>
+        <div class="input-modal" style="display: none">
+            <div class="input-modal-header"></div>
+            <div class="input-modal-section">
+                <textarea></textarea>
+            </div>
+            <div class="input-modal-footer">
+                <span class="invert input-modal-btn no-select" onclick="hamburguerMenu('.input-modal')">[x]</span>
+                <span class="invert input-modal-btn no-select" onclick="sendQuestion(this.parentElement.parentElement.getElementsByClassName('input-modal-header')[0],
+                     this.parentElement.parentElement.getElementsByClassName('input-modal-section')[0].getElementsByTagName('textarea')[0].value);
+                     hamburguerMenu('.input-modal')">[o]</span>
+            </div>
         </div>
     </header>
     <section>
@@ -52,18 +62,19 @@
                 <a href="#" class="no-select question-answers-btn"
                    onclick="showAnswers(this.parentElement.parentElement)">[\/]</a>
                 <br/>
-                <a href="#" class="no-select question-reply-btn">[`.]</a>
+                <a href="#" class="no-select question-reply-btn"
+                   onclick="hamburguerMenu('.input-modal', this.parentElement.parentElement)">[`.]</a>
             </div>
         </div>
         <div class="answer-card invert" style="display: none">
             <span class="username">Usuário</span>
             <p class="question-text">Resposta Épica</p>
             <div class="question-buttons">
-                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+] </span>
+                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+]</span>
                 <span class="likes-count">0</span>
                 <br/>
                 <span class="no-select question-button"
-                      onclick="sendDislike(this.parentElement.parentElement)">[-] </span>
+                      onclick="sendDislike(this.parentElement.parentElement)">[-]</span>
                 <span class="dislikes-count">0</span>
             </div>
         </div>

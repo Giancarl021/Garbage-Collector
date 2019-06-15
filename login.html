@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+    <script src="libs/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -19,6 +20,18 @@
                  class="login-button vertical-center invert border center-text no-select">Voltar
             </div>
             <div class="user-profile vertical-center border center-text">Não Conectado</div>
+        </div>
+        <div class="hamburger-menu no-select" style="display: none" onclick="hamburguerMenu('.hamburger-modal')">
+            <img src="img/menu.svg" alt="Menu"/>
+        </div>
+        <div class="hamburger-modal" style="display: none">
+            <img src="img/back.svg" alt="Retornar" onclick="hamburguerMenu('.hamburger-modal')"/>
+            <div class="hamburguer-container">
+                <div class="hamburger-content center-text">Não Conectado</div>
+                <div onclick="window.location.href = 'index.html'"
+                     class="hamburger-content center-text no-select invert inverted-border">Voltar
+                </div>
+            </div>
         </div>
     </header>
 </body>
