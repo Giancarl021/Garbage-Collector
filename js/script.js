@@ -66,6 +66,7 @@ function hamburguerMenu(modal, src) {
         $(modal).children('.input-modal-header').children('*').remove();
         if (typeof src !== 'string') {
             const $el = $(src).clone();
+            $el.css('overflow', 'auto');
             $el.children('.question-buttons, .question-comments').remove();
             $(modal).children('.input-modal-header').append($el);
         } else {
