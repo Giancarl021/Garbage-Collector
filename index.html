@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Site</title>
+    <title>Nome do Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
@@ -21,6 +21,22 @@
             </div>
             <div class="user-profile vertical-center border center-text">Usuário</div>
         </div>
+        <div class="hamburger-menu no-select" style="display: none" onclick="hamburguerMenu()">
+            <p class="hamburguer-text center-text">
+                o<br/>o<br/>o
+            </p>
+        </div>
+        <div class="hamburger-modal" style="display: none">
+            <img src="img/back.svg" alt="Retornar" onclick="hamburguerMenu()"/>
+            <div class="hamburguer-container">
+                <div class="hamburguer-return" onclick="hamburguerMenu()"></div>
+                <div class="hamburger-content center-text">Usuário</div>
+                <div onclick="window.location.href = 'login.html'"
+                     class="hamburger-content center-text no-select">Entrar ou Cadastrar
+                </div>
+            </div>
+
+        </div>
     </header>
     <section>
         <div class="question-card border">
@@ -35,7 +51,8 @@
                 <span class="dislikes-count">0</span>
             </div>
             <div class="question-comments">
-                <a href="#" class="no-select question-answers-btn" onclick="showAnswers(this.parentElement.parentElement)">[\/]</a>
+                <a href="#" class="no-select question-answers-btn"
+                   onclick="showAnswers(this.parentElement.parentElement)">[\/]</a>
                 <br/>
                 <a href="#" class="no-select question-reply-btn">[`.]</a>
             </div>

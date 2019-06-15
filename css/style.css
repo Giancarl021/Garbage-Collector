@@ -24,6 +24,59 @@ header {
     height: 100%;
 }
 
+.hamburger-menu {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    line-height: 10px;
+    width: 10%;
+    text-align: center;
+}
+
+.hamburguer-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.hamburguer-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-modal > img {
+    width: 20%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.hamburger-content {
+    /*height: 25%;*/
+    margin: 10px;
+    background-color: black;
+    color: white;
+    font-size: 5vh;
+    padding: 5px;
+    border-radius: 20px;
+}
+
 .user-profile {
     position: relative;
     padding: 5px;
