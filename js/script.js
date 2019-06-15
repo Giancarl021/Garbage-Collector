@@ -14,6 +14,7 @@ function sendQuestion(question, text) {
     // Recupera em text o texto digitado na textarea
 }
 
+// Caso queira avisar um erro ao usuário, use a função showError('Erro'), assim irá aparecer um aviso por 2.5s na tela com texto passado por parâmetro
 
 /* Efeitos visuais (Não mexer) */
 
@@ -70,4 +71,13 @@ function hamburguerMenu(modal, src) {
         }
     }
     $(modal).slideToggle(300);
+}
+
+function showError(message) {
+    const $err = $('#err');
+    $err.text(message).fadeIn(300, () => {
+        setInterval(() => {
+            $err.fadeOut(300);
+        }, 2500);
+    });
 }
