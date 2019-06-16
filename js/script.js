@@ -1,3 +1,5 @@
+const siteName = 'Nome do Site'; // Nome do site (no HTML use um localizar e substituir em 'Nome do Site' para o nome desejado)
+
 function sendLike(question) {
     // Requisição PHP para alterar os likes de uma questão
     // Recupera em question o elemento 'question-card' que possui a questão clicada
@@ -16,12 +18,14 @@ function sendQuestion(question, text) {
 
 // Caso queira avisar um erro ao usuário, use a função showError('Erro'), assim irá aparecer um aviso por 2.5s na tela com texto passado por parâmetro
 
+
+
 /* Efeitos visuais (Não mexer) */
 
 let responsivelyMode = 'PC';
 
 function showAnswers(question) {
-    $(question).next().slideToggle('fast');
+    $(question).nextUntil('.question-card', '.answer-card').slideToggle('fast');
     const $originBtn = $(question).children('.question-comments').children('.question-answers-btn');
     $originBtn.text($originBtn.text() === '[/\\]' ? '[\\/]' : '[/\\]');
 }
@@ -70,7 +74,7 @@ function hamburguerMenu(modal, src) {
             $el.children('.question-buttons, .question-comments').remove();
             $(modal).children('.input-modal-header').append($el);
         } else {
-            $(`<div class="question-card border" style="overflow: auto"><span class="username">Nome do Site</span><p class="question-text">${src}</div>`).appendTo('.input-modal-header');
+            $(`<div class="question-card border" style="overflow: auto"><span class="username">${siteName}</span><p class="question-text">${src}</div>`).appendTo('.input-modal-header');
         }
     }
     $(modal).slideToggle(300);
