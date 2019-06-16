@@ -277,6 +277,15 @@ form > h1 {
     min-height: 20px;
 }
 
+#addQuestion {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    font-size: 6vh;
+    z-index: -1;
+    cursor: pointer;
+}
+
 /* CSS BASE */
 
 .invert {
