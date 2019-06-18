@@ -108,8 +108,8 @@
             </div>
             <div class="input-modal-footer">
                 <span class="input-modal-btn no-select" onclick="hamburguerMenu('.input-modal')">[x]</span>
-                <span class="input-modal-btn no-select" onclick="sendQuestion(this.parentElement.parentElement.getElementsByClassName('input-modal-header')[0],
-                     this.parentElement.parentElement.getElementsByClassName('input-modal-section')[0].getElementsByTagName('textarea')[0].value);
+                <span class="input-modal-btn no-select" onclick="sendQuestion(document.getElementsByClassName('input-modal-section')[0],
+                     document.getElementsByTagName('textarea')[0].value);
                      hamburguerMenu('.input-modal')">[o]</span>
             </div>
         </div>
