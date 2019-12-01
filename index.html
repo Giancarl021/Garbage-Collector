@@ -2,120 +2,18 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!-- Nome do Site -->
-    <title>Nome do Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
-    <script src="libs/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<!-- PRESET BY GIANCARL021 -->
     <script src="js/script.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1 class="site-title center-text vertical-center">
-            <!-- Nome do site -->
-            Nome do Site
-        </h1>
-        <div class="user-base vertical-center">
-            <div onclick="window.location.href = 'login.html'"
-                 class="login-button vertical-center invert border center-text no-select">Entrar ou Cadastrar
-            </div>
-            <div class="user-profile vertical-center border center-text">
-                <!-- Nome do usuário logado no momento -->
-                Usuário
-            </div>
-        </div>
-        <div class="hamburger-menu no-select" style="display: none" onclick="hamburguerMenu('.hamburger-modal')">
-            <img src="img/menu.svg" alt="Menu"/>
-        </div>
-    </header>
-    <section>
-        <!-- Loop para imprimir todas as perguntas -->
-        <div class="question-card border">
-            <span class="username">
-                <!-- Nome do usuário que fez a pergunta -->
-                Usuário
-            </span>
-            <p class="question-text center-text">
-                <!-- Texto da pergunta -->
-                Pergunta interessante para toda a humanidade
-            </p>
-            <div class="question-buttons">
-                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+]</span>
-                <span class="likes-count">
-                    <!-- Contagem de likes da pergunta -->
-                    0
-                </span>
-                <br/>
-                <span class="no-select question-button"
-                      onclick="sendDislike(this.parentElement.parentElement)">[-]</span>
-                <span class="dislikes-count">
-                    <!-- Contagem de dislikes da pergunta -->
-                    0
-                </span>
-            </div>
-            <div class="question-comments">
-                <a href="#" class="no-select question-answers-btn"
-                   onclick="showAnswers(this.parentElement.parentElement)">[\/]</a>
-                <br/>
-                <a href="#" class="no-select question-reply-btn"
-                   onclick="hamburguerMenu('.input-modal', this.parentElement.parentElement)">[`.]</a>
-            </div>
-        </div>
-        <!-- Loop para imprimir cada resposta para cada pergunta -->
-        <div class="answer-card invert" style="display: none">
-            <span class="username">
-                <!-- Usuário que fez a resposta -->
-                Usuário
-            </span>
-            <p class="question-text">
-                <!-- Texto da resposta -->
-                Resposta Épica
-            </p>
-            <div class="question-buttons">
-                <span class="no-select question-button" onclick="sendLike(this.parentElement.parentElement)">[+]</span>
-                <span class="likes-count">
-                    <!-- Contagem de likes da resposta -->
-                    0
-                </span>
-                <br/>
-                <span class="no-select question-button"
-                      onclick="sendDislike(this.parentElement.parentElement)">[-]</span>
-                <span class="dislikes-count">
-                    <!-- Contagem de dislikes da resposta -->
-                    0
-                </span>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="hamburger-modal" style="display: none">
-            <img src="img/back.svg" alt="Retornar" onclick="hamburguerMenu('.hamburger-modal')"/>
-            <div class="hamburguer-container">
-                <div class="hamburger-content center-text">Usuário</div>
-                <div onclick="window.location.href = 'login.html'"
-                     class="hamburger-content center-text no-select invert inverted-border">Entrar ou Cadastrar
-                </div>
-            </div>
-        </div>
-        <div class="input-modal" style="display: none">
-            <div class="input-modal-header"></div>
-            <div class="input-modal-section">
-                <textarea></textarea>
-            </div>
-            <div class="input-modal-footer">
-                <span class="input-modal-btn no-select" onclick="hamburguerMenu('.input-modal')">[x]</span>
-                <span class="input-modal-btn no-select" onclick="sendQuestion(document.getElementsByClassName('input-modal-section')[0],
-                     document.getElementsByTagName('textarea')[0].value);
-                     hamburguerMenu('.input-modal')">[o]</span>
-            </div>
-        </div>
-        <div id="err" class="invert center-text" style="display: none"></div>
-        <div id="addQuestion" class="no-select" onclick="hamburguerMenu('.input-modal', 'Fazer pergunta')">[+]</div>
-    </footer>
+
 </body>
 
 </html>
