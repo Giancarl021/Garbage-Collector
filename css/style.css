@@ -1,4 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+
+:root {
+    /* POSITIONING */
+    --header-height: 100px;
+    /* GRADIENT OPTIONS */
+    --default-gradient-animation: gradient-animation 15s ease-in-out infinite alternate;
+    --default-gradient-background-size: 400%;
+    /* GRADIENTS */
+    --main-gradient: linear-gradient(45deg, #082119, #280260);
+    --button-gradient: linear-gradient(45deg, orange, orangered);
+}
+
+@keyframes gradient-animation {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 100% 100%
+    }
+}
+
+@keyframes text-shadow-animation {
+    from {
+        text-shadow: 0 0 15px #ff0000;
+    }
+    to {
+        text-shadow: 0 0 15px #ff9200;
+    }
+}
+
+* {
+    color: white;
+    font-family: 'Tomorrow', monospace;
+}
+
 body {
     padding: 0;
     margin: 0;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-image: linear-gradient(#000A, transparent);
+}
+
+section {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+}
+
+.tab-selector {
+    position: relative;
+    top: 50%;
+    float: right;
+    margin: 0 10px;
+    padding: 10px 35px;
+    background-image: linear-gradient(60deg, #ff4500, #ff7300, #611b00 90%);
+    background-size: 200%;
+    background-position: 0 0;
+    border-radius: 7px;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+    user-select: none;
+    transition: .2s;
+}
+
+.tab-selector:hover,
+.tab-selector:focus {
+    background-position: 70% 70%;
+}
+
+.tab-selector:active {
+    background-position: 100% 100%;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-image: var(--main-gradient);
+    background-size: var(--default-gradient-background-size);
+    animation: var(--default-gradient-animation);
+}
+
+#title {
+    display: block;
+    position: relative;
+    top: 50%;
+    float: left;
+    margin: 0 10px;
+    transform: translateY(-50%);
+    color: orange;
+    font-size: 5em;
+    animation: text-shadow-animation 10s infinite linear alternate;
+    text-shadow: 0 0 15px #ff0000;
 }
