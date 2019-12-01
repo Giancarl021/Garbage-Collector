@@ -102,4 +102,5 @@ section {
     font-size: 5em;
     animation: text-shadow-animation 10s infinite linear alternate;
     text-shadow: 0 0 15px #ff0000;
+    text-transform: uppercase;
 }
