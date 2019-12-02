@@ -1,12 +1,19 @@
 function init() {
     console.log('initializing page');
     const roulette = document.getElementsByClassName('roulette')[0];
+    const products = document.getElementsByClassName('products')[0];
     for (let i = 0; i < 10; i++) {
         const img = document.createElement('img');
         img.src = 'img/folder.png';
         img.style.opacity = (i === 0) ? '1' : '0';
         img.style.filter = `hue-rotate(${i * 75}deg)`;
         roulette.appendChild(img);
+    }
+
+    for(let i = 0; i < 5; i++) {
+        const prod = document.createElement('img');
+        prod.src = 'img/product.png';
+        products.appendChild(prod);
     }
 
     setInterval(() => {
