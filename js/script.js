@@ -1,3 +1,19 @@
+Array.prototype.shuffle = function () {
+    let currentIndex = this.length;
+    const array = this.slice();
+
+    while (currentIndex !== 0) {
+        const rand = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        const temp = array[currentIndex];
+        array[currentIndex] = array[rand];
+        array[rand] = temp;
+    }
+
+    return array;
+};
+
 async function delay(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
@@ -28,7 +44,22 @@ async function digitFx(element, text, milliseconds, start = 0, end = '') {
 }
 
 async function loadRepos() {
-    const repos = await get('https://api.github.com/users/Giancarl021/repos');
+    const allRepos = await get('https://api.github.com/users/Giancarl021/repos');
+    const repos = await Promise.all(
+        allRepos
+            .shuffle()
+            .map(repo => get(repo.url))
+    );
+
+    const cards = [];
+    for(const repo of repos) {
+        console.log(repo);
+        cards.push(`<h1>${repo.name}</h1>`);
+    }
+
+    for(const card of cards) {
+        document.getElementById('cards').insertAdjacentHTML('beforeend', card);
+    }
 }
 
 function init() {
