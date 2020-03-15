@@ -44,21 +44,13 @@ async function digitFx(element, text, milliseconds, start = 0, end = '') {
 }
 
 async function loadRepos() {
-    const allRepos = await get('https://api.github.com/users/Giancarl021/repos');
-    const repos = await Promise.all(
-        allRepos
-            .shuffle()
-            .map(repo => get(repo.url))
-    );
+    const response = await get('https://api.github.com/users/Giancarl021/repos');
+    const repos = response.shuffle().splice(0, 4);
 
-    const cards = [];
-    for(const repo of repos) {
-        console.log(repo);
-        cards.push(`<h1>${repo.name}</h1>`);
-    }
+    const cards = document.getElementsByClassName('card');
 
-    for(const card of cards) {
-        document.getElementById('cards').insertAdjacentHTML('beforeend', card);
+    for(let i = 0; i < 4; i++) {
+        cards[i].innerHTML = `<a href="${repos[i]['html_url']}">${repos[i].name}</a><span>${repos[i].language}</span>`;
     }
 }
 
@@ -74,7 +66,7 @@ function init() {
             div.getAttribute('data-end')
         ).catch(console.log);
     }
-    loadRepos();
+    loadRepos().catch(console.log);
 }
 
 document.addEventListener('DOMContentLoaded', init);
