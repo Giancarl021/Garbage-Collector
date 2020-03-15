@@ -1,5 +1,87 @@
-body {
+:root {
+    --header-height: 80px;
+    --footer-height: 50px;
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Consolas', monospace;
+    color: #fff;
+}
+
+body {
+    height: 100vh;
+    background-color: #11121f;
+    display: grid;
+    grid-template-rows: var(--header-height) calc(100% - var(--header-height) - var(--footer-height)) var(--footer-height);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transition: .3s;
+}
+
+header > span {
+    font-size: 2em;
+    /*color: red;*/
+}
+
+header > span > span {
+    color: #c716c8;
+}
+
+header > div {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #bdbaff;
+}
+
+section > h1 {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    --bg: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px var(--bg);
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.27);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+
+footer > a {
+    text-decoration: none;
+    transition: inherit;
+}
+
+footer > a:hover {
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.blink {
+    animation: blink alternate ease-in-out 2 1s;
+}
+
+@keyframes blink {
+    from {
+        color: #bdbaff;
+    }
+    to {
+        color: #fff;
+    }
 }
